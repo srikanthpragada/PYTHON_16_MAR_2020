@@ -1,4 +1,9 @@
 def iseven(n):
+    """
+    Returns true if number is even otherwise false
+    :param n:  number
+    :return: boolean
+    """
     return n % 2 == 0
 
 
