@@ -1,4 +1,4 @@
-# Display factors for the given number
+# Display common factors for the given numbers
 import sys
 
 nums = list(map(int, sys.argv[1:]))
