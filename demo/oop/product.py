@@ -14,6 +14,9 @@ class Product:
         # Object attributes
         self.id = id
         self.name = name
+        if price < 0:
+            raise ValueError('Invalid Price ' + str(price))
+
         self.price = price
 
     def __str__(self):
@@ -28,6 +31,8 @@ class Product:
         else:
             print("Invalid Price")
 
+
+p1 = Product(1, "Abc", -1000)
 
 p = Product.dummy()
 print(p)

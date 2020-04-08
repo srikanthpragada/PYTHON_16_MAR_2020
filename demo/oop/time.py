@@ -13,6 +13,8 @@ class Time:
     def hour(self, value):
         if value >= 0 and value <= 23:
             self.h = value
+        # else:
+        #     raise InvalidTimeError('Invalid Hours')
 
     @property
     def total_seconds(self):
