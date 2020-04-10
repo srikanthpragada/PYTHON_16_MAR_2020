@@ -1,0 +1,4 @@
+Here is the story of Python
+It was created by Van Rossum
+It is very widely used in ML and DS
+It is also used in Web Development
