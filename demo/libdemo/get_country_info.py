@@ -14,3 +14,16 @@ print("Capital     : ", country['capital'])
 print("Population  : ", country['population'])
 print("Size (sqkm) : ", country['area'])
 
+print("Borders")
+print("========")
+if len(country['borders']) == 0:
+    print("No borders!")
+else:
+    for c in country['borders']:
+        print(c)
+
+print("Currencies")
+print("==========")
+
+for c in country['currencies']:
+    print( c['name'])

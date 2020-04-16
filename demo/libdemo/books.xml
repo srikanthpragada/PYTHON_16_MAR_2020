@@ -1,0 +1,11 @@
+<books>
+    <book>
+        <title>Python Tricks</title>
+        <price>350</price>
+    </book>
+
+    <book>
+        <title>Java Comp. Ref</title>
+        <price>850</price>
+    </book>
+</books>
