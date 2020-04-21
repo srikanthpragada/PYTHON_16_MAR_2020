@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Countries</title>
+</head>
+<body>
+<h1>Countries</h1>
+
+{% for c in countries %}
+<h3>{{c.name}} - {{c.capital}}</h3>
+<h4>{{c.population}}</h4>
+<img src="{{c.flag}}" style="width:200px;height:100px"/>
+{% endfor %}
+
+</body>
+</html>
