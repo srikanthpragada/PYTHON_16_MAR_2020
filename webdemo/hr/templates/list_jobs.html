@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jobs</title>
+    <style>
+        th, td { text-align : center }
+    </style>
+</head>
+<body>
+<h1>Jobs</h1>
+
+<table border="1" style="width:100%">
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Min Salary</th>
+        <th></th>
+    </tr>
+    {% for job in jobs %}
+        <tr>
+            <td>{{ job.0 }} </td>
+            <td>{{ job.1 }} </td>
+            <td>{{ job.2 }} </td>
+            <td><a href="/hr/deletejob?id={{job.0}}">Delete </a> </td>
+        </tr>
+    {% endfor %}
+</table>
+
+<p></p>
+<a href="/hr/addjob">Add Job</a>
+</body>
+</html>
