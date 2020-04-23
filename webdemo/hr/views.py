@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 import sqlite3
 import requests
+from .forms import DiscountForm
 
 
 def home(request):
@@ -32,9 +33,9 @@ def delete_job(request):
 
 def add_job(request):
     # if data is passed then process it
-    if 'title' in request.GET:
-        title = request.GET['title']
-        minsal = int(request.GET['minsal'])
+    if 'title' in request.POST:
+        title = request.POST['title']
+        minsal = int(request.POST['minsal'])
         con = sqlite3.connect(r"c:\classroom\mar16\hr.db")
         cur = con.cursor()
         cur.execute("insert into jobs (title,minsalary) values(?,?)", (title, minsal))
@@ -50,3 +51,18 @@ def list_jobs(request):
     cur = con.cursor()
     cur.execute("select * from jobs")
     return render(request, 'list_jobs.html', {'jobs': cur.fetchall()})
+
+
+def discount(request):
+    if request.method == "GET":
+        f = DiscountForm()
+        return render(request, 'discount.html', {'form': f})
+    else:
+        f = DiscountForm(request.POST)  # Bind client's data
+        if f.is_valid():
+            amount = f.cleaned_data['amount']
+            rate = f.cleaned_data['rate']
+            discount = amount * rate / 100
+            return render(request, 'discount.html', {'form': f, 'discount': discount})
+        else:
+            return render(request, 'discount.html', {'form': f})

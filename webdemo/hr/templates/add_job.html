@@ -8,7 +8,8 @@
 
 <h2>Add Job</h2>
 
-<form>
+<form method="post">
+    {% csrf_token %}
     Job Title <br/>
     <input type="text" name="title" required size="30"/>
     <p></p>

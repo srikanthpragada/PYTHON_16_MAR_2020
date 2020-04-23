@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Discount Calculation</title>
+</head>
+<body>
+
+<h2>Discount Calculation</h2>
+
+<form method="post">
+    {% csrf_token %}
+    <table>
+        {{form}}
+    </table>
+    <p></p>
+    <input type="submit" value="Calculate"/>
+</form>
+
+<h3>Discount : {{discount}} </h3>
+
+</body>
+</html>
