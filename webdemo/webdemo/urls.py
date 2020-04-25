@@ -21,5 +21,6 @@ urlpatterns = [
     path('welcome', views.welcome),
     path('greet', views.greet),
     path('hr/', include("hr.urls")),
+    path('books/', include("books.urls")),
 
 ]
