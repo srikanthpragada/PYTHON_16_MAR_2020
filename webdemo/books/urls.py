@@ -12,7 +12,8 @@ urlpatterns = [
     path('search/', views.book_search),
     path('dosearch/', views.book_do_search),
 
-    path("listbooks/", class_views.ListBooks.as_view()),
+    path("hello/", class_views.HelloView.as_view()),
+    path("listbooks/", class_views.ListBooksView.as_view()),
 
     path('rest/books/', rest_views.process_books),
     path('rest/books/<int:id>', rest_views.process_one_book),
