@@ -3,6 +3,7 @@ from django.http import HttpResponse
 import sqlite3
 import requests
 from .forms import DiscountForm
+from datetime import datetime
 
 
 def home(request):
@@ -66,3 +67,11 @@ def discount(request):
             return render(request, 'discount.html', {'form': f, 'discount': discount})
         else:
             return render(request, 'discount.html', {'form': f})
+
+
+def ajax_demo(request):
+    return render(request, 'ajax_demo.html')
+
+
+def get_datetime(request):
+    return HttpResponse(str(datetime.now()))

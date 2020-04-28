@@ -9,4 +9,6 @@ urlpatterns = [
      path("jobs",views.list_jobs),
      path("addjob",views.add_job),
      path("discount",views.discount),
+     path("ajax",views.ajax_demo),
+     path("now",views.get_datetime),
 ]
