@@ -5,6 +5,7 @@ from rest_framework.response import Response
 from books.models import Book
 
 
+# To perform JSON Serialization - Book to JSON
 class BookSerializer(serializers.ModelSerializer):
     class Meta:
         model = Book
